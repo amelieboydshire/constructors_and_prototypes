@@ -50,4 +50,13 @@ dealership2.addCar(car1);
 dealership2.addCar(car2);
 console.log("Cars in stock: ", dealership2.getCarsInStock());
 
+// return array containing each car's manufacturer
+
+Dealership.prototype.getCarManufacturers = function() {
+    return this.carsInStock.map(car => car.getManufacturer());
+}
+
+const carManufacturers = dealership2.getCarManufacturers();
+console.log("Car manufacturers: ", carManufacturers);
+
 module.exports = Dealership;
