@@ -73,4 +73,13 @@ Dealership.prototype.getHondaCars = function() {
 const hondaCars = dealership2.getHondaCars();
 console.log("Honda cars:", hondaCars);
 
+// find value of all the cars in stock 
+
+Dealership.prototype.getTotalValueOfCars = function() {
+    return this.carsInStock.reduce((totalValue, car) => totalValue + car.price, 0);
+}
+
+const totalValue = dealership2.getTotalValueOfCars();
+console.log("Total value of cars in stock: ", totalValue);
+
 module.exports = Dealership;
