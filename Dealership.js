@@ -26,6 +26,17 @@ Dealership.prototype.getCarsInStock = function() {
 
 // methods
 
+// count cars in stock 
+
+Dealership.prototype.countCarsInStock = function() {
+    return this.carsInStock.length;
+}
+
+const dealership1 = new Dealership("Poynings Cars", 200);
+console.log("Number of cars in stock:", dealership1.countCarsInStock());
+
+
+// add cars to stock 
 
 Dealership.prototype.addCar = function (car) {
     this.carsInStock.push(car);
@@ -34,10 +45,9 @@ Dealership.prototype.addCar = function (car) {
 const car1 = new Car("Honda", 1200, "V6");
 const car2 = new Car("BMW", 2000, "V8");
 
-const dealership1 = new Dealership("Flank Cars", 100);
-dealership1.addCar(car1);
-dealership1.addCar(car2);
-console.log("Cars in stock: ", dealership1.getCarsInStock());
-
+const dealership2 = new Dealership("Flank Cars", 100);
+dealership2.addCar(car1);
+dealership2.addCar(car2);
+console.log("Cars in stock: ", dealership2.getCarsInStock());
 
 module.exports = Dealership;
