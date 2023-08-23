@@ -59,4 +59,18 @@ Dealership.prototype.getCarManufacturers = function() {
 const carManufacturers = dealership2.getCarManufacturers();
 console.log("Car manufacturers: ", carManufacturers);
 
+// find all cars from a given manufacturer (Honda)
+
+Dealership.prototype.getHondaCars = function() {
+    return this.carsInStock.reduce((hondaCars, car) => {
+        if (car.getManufacturer() === "Honda") {
+            hondaCars.push(car);
+        }
+        return hondaCars;
+    }, []);
+}
+
+const hondaCars = dealership2.getHondaCars();
+console.log("Honda cars:", hondaCars);
+
 module.exports = Dealership;
